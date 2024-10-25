@@ -12,6 +12,6 @@ class _CommentState extends State<Comment> {
   @override
   Widget build(BuildContext context) {
   
-  return SafeArea(child: Text("comment"));
+  return SafeArea(child: Text("review"));
   }
 }

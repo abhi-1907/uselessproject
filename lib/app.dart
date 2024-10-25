@@ -3,16 +3,15 @@ import 'package:uselessproject/comment.dart';
 import 'package:uselessproject/review.dart';
 
 final List<Widget> tabs = [const Comment(), const Review()];
-int currentTabIndex = 0;
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class WholeApp extends StatefulWidget {
+  const WholeApp({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<WholeApp> createState() => _WholeAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _WholeAppState extends State<WholeApp> {
   int currentTabIndex = 0;
 
   @override
@@ -29,12 +28,14 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: AnimatedSwitcher(
           duration: const Duration(milliseconds: 300),
+          switchInCurve: Curves.easeInOut,
+          switchOutCurve: Curves.easeInOut,
           child: tabs[currentTabIndex],
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.deepPurple, Colors.purpleAccent],
+              colors: [Colors.deepPurpleAccent, Colors.blueAccent],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),

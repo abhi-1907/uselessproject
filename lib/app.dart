@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:uselessproject/comment.dart';
 import 'package:uselessproject/review.dart';
-final Tabs=[Comment(),Review(),];
-int currentTabIndex=0;
+
+final List<Widget> tabs = [const Comment(), const Review()];
+int currentTabIndex = 0;
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
@@ -12,37 +13,58 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final Tabs=[const Comment(),const Review(),];
-  int currentTabIndex=0;
+  int currentTabIndex = 0;
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: 'Roboto',
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(fontSize: 18, color: Colors.black87),
+          bodyMedium: TextStyle(fontSize: 16, color: Colors.black54),
+        ),
+      ),
       home: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        body: Tabs[currentTabIndex],
-        bottomNavigationBar:
-          BottomNavigationBar(
+        body: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          child: tabs[currentTabIndex],
+        ),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.deepPurple, Colors.purpleAccent],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: BottomNavigationBar(
+            backgroundColor: Colors.transparent,
+            elevation: 0,
             currentIndex: currentTabIndex,
-            onTap: (currentIndex){
-              currentTabIndex=currentIndex;
-              setState(() {}
-              );
-              },
+            onTap: (index) {
+              setState(() {
+                currentTabIndex = index;
+              });
+            },
             items: const [
-
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.comment_outlined),
-                  label: "Comments"),
-                BottomNavigationBarItem(
+              BottomNavigationBarItem(
+                icon: Icon(Icons.comment_outlined),
+                label: "Comments",
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.reviews_outlined),
-                label:"Ratings"),
+                label: "Ratings",
+              ),
             ],
-            backgroundColor: const Color.fromARGB(255, 103, 6, 121),
             selectedItemColor: Colors.white,
-            unselectedItemColor: Color.fromARGB(255, 255, 254, 254),
-      )
+            unselectedItemColor: Colors.white70,
+            selectedFontSize: 14,
+            unselectedFontSize: 12,
+            type: BottomNavigationBarType.fixed,
+          ),
+        ),
       ),
     );
   }

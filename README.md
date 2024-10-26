@@ -3,9 +3,7 @@ PROJECT NAME:- RateMeButWhy
 BASIC DETAILS
 
 Team Members
-Team Lead: Abhijith venugopal- soe,cusat
-Member 2: Anjali Georance-soe,cusat
-Member 3:Eldho P Elias - soe,cusat
+Team Lead: Abhijith venugopal- soe,cusat;Member 2: Anjali Georance-soe,cusat;Member 3:Eldho P Elias - soe,cusat
 
 PROJECT DESCRIPTION;-
 This is a Flutter project in which  users can leave reviews on any topic—be it food, services, or products—but instead of providing meaningful responses, the platform transforms their feedback into hilarious, whimsical, or entirely nonsensical statements that feels fun.The  app that uses Google's Gemini language model API to provide responses to user questions in different styles. The app includes options for response modes like Shakespearean English, Python Programming, English Poem, and Sarcastic Humor, allowing the user to get responses that fit different tones and formats.
@@ -23,17 +21,11 @@ FLUTTER,hive,Google's Gemini language model API
 
 Implementation of RateMeButWhy:-
 
-1.App Structure:
- Pages: Login, Comment (feedback input), and Review (feedback history).
- Storage: Use Hive for storing user data, feedback, and preferences.
-2.Core Features:
-  Gemini API Integration: Transform feedback based on user-selected category and style, storing results in Hive.
-  UI/UX:
-3.Aesthetic design with gradient backgrounds, dropdowns for categories and styles, and neatly styled feedback display.Enhanced feedback input and response area for a clean user experience.
-4.Error Handling:
-  Inform users about empty input or API errors with friendly messages.
-5.Future Enhancements:
-  Add social sharing, personalized suggestions, and custom style options.
+1.App Structure:Pages: Login, Comment (feedback input), and Review (feedback history).Storage: Use Hive for storing user data, feedback, and preferences.
+2.Core Features: Gemini API Integration: Transform feedback based on user-selected category and style, storing results in Hive.
+3.UI/UX:Aesthetic design with gradient backgrounds, dropdowns for categories and styles, and neatly styled feedback display.Enhanced feedback input and response area for a clean user experience.
+4.Error Handling:Inform users about empty input or API errors with friendly messages.
+5.Future Enhancements:Add social sharing, personalized suggestions, and custom style options.
 
 Screenshots :-
 1.https://drive.google.com/file/d/1Pz7uPXpo-Ptxokj7d4-7GZi2t1Ht4D1_/view?usp=drive_link

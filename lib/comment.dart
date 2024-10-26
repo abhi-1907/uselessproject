@@ -231,7 +231,7 @@ class _CommentState extends State<Comment> {
 
 class GeminiService {
   // Replace with your actual API key
-  final String geminiAPIKey = 'AIzaSyD2alKChT_ovlqRgzCYPUlN5kl_9dCBcwA';
+  final String geminiAPIKey = '';
 
   Future<String> getAnswer(String question, String selectedMode, String category) async {
     // Modify the question based on selected mode and category
